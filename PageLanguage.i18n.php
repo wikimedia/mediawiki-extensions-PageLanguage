@@ -29,6 +29,15 @@ Parameters:
 * $2 - the language code being set now',
 );
 
+/** Danish (dansk)
+ * @author Christian List
+ */
+$messages['da'] = array(
+	'pagelanguage-desc' => 'Angive indstillinger for sprog per side',
+	'pagelanguage-invalid' => "'''Advarsel:''' ignorerer ugyldig sprogkode \"\$1\" for sproget på siden.",
+	'pagelanguage-duplicate' => '\'\'\'Advarsel:\'\'\' sproget "$2" tilsidesætter det tidligere sprog på siden "$1".',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
@@ -56,11 +65,29 @@ $messages['ja'] = array(
 	'pagelanguage-duplicate' => "'''警告:''' ページ言語「$2」が、それ以前に定義されたページ言語「$1」よりも優先されます。",
 );
 
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'pagelanguage-desc' => 'Задавање на јазик за секоја страница посебно',
+	'pagelanguage-invalid' => "'''Предупредување:''' Го занемарувам невважечкиот јазичен код „$1“ за јазикот на страницата.",
+	'pagelanguage-duplicate' => "'''Предупредување:''' Јазикот „$2“ ќе го замени претходниот јазик на страницата („$1“).",
+);
+
 /** Swedish (svenska)
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'pagelanguage-duplicate' => '\'\'\'Varning:\'\'\' Sidspråket "$2" åsidosätter det tidigare sidspråket "$1".',
+);
+
+/** Ukrainian (українська)
+ * @author Andriykopanytsia
+ */
+$messages['uk'] = array(
+	'pagelanguage-desc' => 'Визначати мову сторінки на сторінку',
+	'pagelanguage-invalid' => '"Попередження:" ігнорування неприпустимого мовного коду " $1" для мови сторінки.',
+	'pagelanguage-duplicate' => '"Попередження:" мова сторінки "$2" переписала мову сторінки "$1".',
 );
 
 /** Yiddish (ייִדיש)
