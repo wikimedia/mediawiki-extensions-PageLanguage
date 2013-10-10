@@ -65,6 +65,22 @@ $messages['ja'] = array(
 	'pagelanguage-duplicate' => "'''警告:''' ページ言語「$2」が、それ以前に定義されたページ言語「$1」よりも優先されます。",
 );
 
+/** Korean (한국어)
+ * @author Hym411
+ */
+$messages['ko'] = array(
+	'pagelanguage-desc' => '페이지별로 페이지 언어 정의',
+);
+
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'pagelanguage-desc' => 'Sprooch vun der Säit pro Säit definéieren',
+	'pagelanguage-invalid' => "'''Opgepasst:''' Den net valabele Sproochcode ''$1'' fir Sprooch vun der Säit gëtt ignoréiert.",
+	'pagelanguage-duplicate' => "'''Opgepass:''' D'Sprooch vun der Säit ''$2'' iwwerschreift déi vireg Sprooch vun der Säit ''$1''.",
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
@@ -72,6 +88,24 @@ $messages['mk'] = array(
 	'pagelanguage-desc' => 'Задавање на јазик за секоја страница посебно',
 	'pagelanguage-invalid' => "'''Предупредување:''' Го занемарувам невважечкиот јазичен код „$1“ за јазикот на страницата.",
 	'pagelanguage-duplicate' => "'''Предупредување:''' Јазикот „$2“ ќе го замени претходниот јазик на страницата („$1“).",
+);
+
+/** Polish (polski)
+ * @author Woytecr
+ */
+$messages['pl'] = array(
+	'pagelanguage-desc' => 'Określa język dla każdej strony',
+	'pagelanguage-invalid' => "'''Ostrzeżenie:''' Zignorowano nieprawidłowy kod języka \"\$1\" dla języka strony.",
+	'pagelanguage-duplicate' => '\'\'\'Ostrzeżenie:\'\'\' Język strony "$2" zastępuje wcześniejszy język "$1".',
+);
+
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'pagelanguage-desc' => 'Определяет язык страницы на страницу',
+	'pagelanguage-invalid' => "'''Предупреждение:''' недопустимый код языка «$1» для языка страницы игнорируется.",
+	'pagelanguage-duplicate' => "'''Предупреждение:''' язык страницы «$2» переопределяет ранее заданный язык страницы «$1».",
 );
 
 /** Swedish (svenska)
@@ -97,4 +131,13 @@ $messages['yi'] = array(
 	'pagelanguage-desc' => 'דעפֿינירן בלאט שפראך פאר בלאט',
 	'pagelanguage-invalid' => "'''ווארענונג:''' איגנארירן אומגילטיקן שפראך־קאד \"\$1\" פאר בלאטשפראך.",
 	'pagelanguage-duplicate' => '\'\'\'ווארענונג:\'\'\' בלאטשפראך "$2" שרײַבט איבער פריערדיקע בלאטשפראך "$1".',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Qiyue2001
+ */
+$messages['zh-hans'] = array(
+	'pagelanguage-desc' => '定义每页的网页语言',
+	'pagelanguage-invalid' => "'' 警告: '' 将忽略使用无效的语言代码“$1”定义网页语言。",
+	'pagelanguage-duplicate' => "'' 警告: '' 页面语言“$2”将覆盖之前的页面语言“$1”。",
 );
