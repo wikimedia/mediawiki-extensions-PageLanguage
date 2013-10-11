@@ -56,6 +56,15 @@ $messages['fr'] = array(
 	'pagelanguage-duplicate' => "'''Attention :''' La langue de la page « $2 » écrase la précédente langue de la page « $1 ».",
 );
 
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'pagelanguage-desc' => 'Define a lingua da páxina en cada páxina',
+	'pagelanguage-invalid' => "'''Atención:''' Ignórase o código de lingua \"\$1\" non válido para a lingua da páxina.",
+	'pagelanguage-duplicate' => '\'\'\'Atención:\'\'\' A lingua "$2" da páxina sobrescribe a anterior lingua "$1" da páxina.',
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
