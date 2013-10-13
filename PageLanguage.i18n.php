@@ -108,6 +108,13 @@ $messages['pl'] = array(
 	'pagelanguage-duplicate' => '\'\'\'Ostrzeżenie:\'\'\' Język strony "$2" zastępuje wcześniejszy język "$1".',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'pagelanguage-desc' => 'د مخ ژبه په هر مخ څرگندوي',
+);
+
 /** Russian (русский)
  * @author Okras
  */
@@ -122,6 +129,15 @@ $messages['ru'] = array(
  */
 $messages['sv'] = array(
 	'pagelanguage-duplicate' => '\'\'\'Varning:\'\'\' Sidspråket "$2" åsidosätter det tidigare sidspråket "$1".',
+);
+
+/** Turkish (Türkçe)
+ * @author Trockya
+ */
+$messages['tr'] = array(
+	'pagelanguage-desc' => 'Her sayfanın sayfa dilini tanımlayın',
+	'pagelanguage-invalid' => "'''Uyarı:''' Sayfa dili için \"\$1\" geçersiz dil kodu dikkate alınmıyor.",
+	'pagelanguage-duplicate' => '\'\'\'Uyarı:\'\'\' "$2" sayfa dili önceki "$1" sayfa dilini geçersiz kılar.',
 );
 
 /** Ukrainian (українська)
