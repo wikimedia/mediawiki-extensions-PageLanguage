@@ -65,6 +65,22 @@ $messages['gl'] = array(
 	'pagelanguage-duplicate' => '\'\'\'Atención:\'\'\' A lingua "$2" da páxina sobrescribe a anterior lingua "$1" da páxina.',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'pagelanguage-desc' => 'הגדרת שפה של דף',
+);
+
+/** Italian (italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'pagelanguage-desc' => 'Definisce la lingua della pagina per ogni pagina',
+	'pagelanguage-invalid' => "'''Attenzione:''' codice di lingua \"\$1\" non valido, ignorato per la lingua della pagina.",
+	'pagelanguage-duplicate' => '\'\'\'Attenzione:\'\'\' codice di lingua "$2" sostituisce la lingua della pagina precedente "$1".',
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
@@ -115,6 +131,15 @@ $messages['ps'] = array(
 	'pagelanguage-desc' => 'د مخ ژبه په هر مخ څرگندوي',
 );
 
+/** Portuguese (português)
+ * @author Malafaya
+ */
+$messages['pt'] = array(
+	'pagelanguage-desc' => 'Definir idioma da página por página',
+	'pagelanguage-invalid' => "'''Aviso:''' Ignorado código de idioma inválido \"\$1\" para o idioma da página.",
+	'pagelanguage-duplicate' => '\'\'\'Aviso:\'\'\' Idioma de página "$2" sobrepõe-se ao anterior idioma de página "$1".',
+);
+
 /** Russian (русский)
  * @author Okras
  */
@@ -128,6 +153,8 @@ $messages['ru'] = array(
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
+	'pagelanguage-desc' => 'Ange inställningar för språk på varje sida',
+	'pagelanguage-invalid' => "'''Varning:''' Ignorerar den ogiltiga språkkoden \"\$1\" som sidans språk.",
 	'pagelanguage-duplicate' => '\'\'\'Varning:\'\'\' Sidspråket "$2" åsidosätter det tidigare sidspråket "$1".',
 );
 
