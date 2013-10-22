@@ -29,6 +29,15 @@ Parameters:
 * $2 - the language code being set now',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'pagelanguage-desc' => 'Definir la llingua de la páxina pa cada páxina',
+	'pagelanguage-invalid' => "'''Atención:''' El códigu de llingua inválidu \"\$1\" inoróse pa la llingua de la páxina.",
+	'pagelanguage-duplicate' => '\'\'\'Atención:\'\'\' La llingua "$2" de la páxina sobreescribe la llingua anterior de la páxina "$1".',
+);
+
 /** Danish (dansk)
  * @author Christian List
  */
