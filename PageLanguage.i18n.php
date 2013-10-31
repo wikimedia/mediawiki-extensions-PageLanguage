@@ -56,6 +56,15 @@ $messages['de'] = array(
 	'pagelanguage-duplicate' => "'''Warnung:''' Die Seitensprache „$2“ überschreibt die frühere Seitensprache „$1“.",
 );
 
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'pagelanguage-desc' => 'Definir el idioma de la página por cada página',
+	'pagelanguage-invalid' => "'''Aviso:''' Se ha ignorado el código de idioma no válido «$1» al definir el idioma de la página.",
+	'pagelanguage-duplicate' => "'''Aviso:''' El idioma «$2» anula la selección de idioma anterior «$1».",
+);
+
 /** French (français)
  * @author Gomoko
  */
@@ -122,6 +131,15 @@ $messages['mk'] = array(
 	'pagelanguage-desc' => 'Задавање на јазик за секоја страница посебно',
 	'pagelanguage-invalid' => "'''Предупредување:''' Го занемарувам невважечкиот јазичен код „$1“ за јазикот на страницата.",
 	'pagelanguage-duplicate' => "'''Предупредување:''' Јазикот „$2“ ќе го замени претходниот јазик на страницата („$1“).",
+);
+
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'pagelanguage-desc' => 'Definir la lenga de la pagina per pagina',
+	'pagelanguage-invalid' => "'''Atencion :''' Còde de lenga « $1 » invalid per la lenga de la pagina.",
+	'pagelanguage-duplicate' => "'''Atencion :''' La lenga de la pagina « $2 » espotís la precedenta lenga de la pagina « $1 ».",
 );
 
 /** Polish (polski)
