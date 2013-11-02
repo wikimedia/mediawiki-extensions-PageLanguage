@@ -167,6 +167,13 @@ $messages['pt'] = array(
 	'pagelanguage-duplicate' => '\'\'\'Aviso:\'\'\' Idioma de página "$2" sobrepõe-se ao anterior idioma de página "$1".',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
+ */
+$messages['pt-br'] = array(
+	'pagelanguage-desc' => 'Define o idioma por página',
+);
+
 /** Russian (русский)
  * @author Okras
  */
