@@ -133,6 +133,15 @@ $messages['mk'] = array(
 	'pagelanguage-duplicate' => "'''Предупредување:''' Јазикот „$2“ ќе го замени претходниот јазик на страницата („$1“).",
 );
 
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'pagelanguage-desc' => 'Paginataal per pagina instellen',
+	'pagelanguage-invalid' => '<strong>Warning:<strong> de ongeldige taalcode "$1" voor paginataal wordt genegeerd.',
+	'pagelanguage-duplicate' => '<strong>Waarschuwing:</strong> de paginataal "$2"overschrijft de eerder paginataal "$1".',
+);
+
 /** Occitan (occitan)
  * @author Cedric31
  */
