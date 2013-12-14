@@ -90,6 +90,15 @@ $messages['he'] = array(
 	'pagelanguage-desc' => 'הגדרת שפה של דף',
 );
 
+/** Interlingue (Interlingue)
+ * @author Makuba
+ */
+$messages['ie'] = array(
+	'pagelanguage-desc' => 'Definir li paginal lingue por chascun singul págine.',
+	'pagelanguage-invalid' => "'''Avertiment:''' Li ínvalid lingual code «$1» es ignorat por li paginal lingue.",
+	'pagelanguage-duplicate' => "'''Avertiment:''' Li paginal lingue «$2» superscrí li anteyan paginal lingue «$1».",
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
