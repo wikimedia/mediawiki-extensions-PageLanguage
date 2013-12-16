@@ -90,6 +90,15 @@ $messages['he'] = array(
 	'pagelanguage-desc' => 'הגדרת שפה של דף',
 );
 
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'pagelanguage-desc' => 'Rěč strony na stronu definować',
+	'pagelanguage-invalid' => "'''Warnowanje:''' Njepłaćiwy rěčny kod \"\$1\" za rěč strony so ignoruje.",
+	'pagelanguage-duplicate' => '\'\'\'Warnowanje:\'\'\' Rěč strony "$2" přepisuje předchadnu rěč strony "$1".',
+);
+
 /** Interlingue (Interlingue)
  * @author Makuba
  */
