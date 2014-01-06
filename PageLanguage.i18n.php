@@ -38,6 +38,14 @@ $messages['ast'] = array(
 	'pagelanguage-duplicate' => '\'\'\'Atención:\'\'\' La llingua "$2" de la páxina sobreescribe la llingua anterior de la páxina "$1".',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'pagelanguage-invalid' => "'''Rhybudd:''' Yn anwybyddu'r cod iaith annilys \"\$1\" ar gyfer iaith y dudalen.",
+	'pagelanguage-duplicate' => "'''Rhybudd:''' Mae'r iaith tudalen \"\$2\" yn disodli'r iaith tudalen cynt \"\$1\".",
+);
+
 /** Danish (dansk)
  * @author Christian List
  */
