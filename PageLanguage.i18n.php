@@ -136,9 +136,12 @@ $messages['ja'] = array(
 
 /** Korean (한국어)
  * @author Hym411
+ * @author Priviet
  */
 $messages['ko'] = array(
 	'pagelanguage-desc' => '페이지별로 페이지 언어 정의',
+	'pagelanguage-invalid' => "'''경고:''' 문서 언어의 유효하지 않은 \"\$1\" 언어 코드를 무시",
+	'pagelanguage-duplicate' => '\'\'\'경고:\'\'\' "$2" 문서 언어가 이전 "$1" 문서 언어를 무시했습니다.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
