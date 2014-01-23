@@ -73,6 +73,13 @@ $messages['es'] = array(
 	'pagelanguage-duplicate' => "'''Aviso:''' El idioma «$2» anula la selección de idioma anterior «$1».",
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'pagelanguage-desc' => 'تعریف زبان صفحه در هر صفحه',
+);
+
 /** French (français)
  * @author Gomoko
  */
