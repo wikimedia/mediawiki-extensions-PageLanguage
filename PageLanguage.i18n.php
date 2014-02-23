@@ -78,6 +78,8 @@ $messages['es'] = array(
  */
 $messages['fa'] = array(
 	'pagelanguage-desc' => 'تعریف زبان صفحه در هر صفحه',
+	'pagelanguage-invalid' => "'''هشدار''': نادیده گرفتن کد زبان نامعتبر \"\$1\" برای زبان صفحه.",
+	'pagelanguage-duplicate' => '\'\'\'هشدار\'\'\': زبان صفحهٔ "$2"، زبان صفحهٔ اولیهٔ "$1" را باطل می‌کند.',
 );
 
 /** French (français)
