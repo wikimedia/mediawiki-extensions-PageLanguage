@@ -16,6 +16,7 @@ $dir = __DIR__;
 
 $wgAutoloadClasses['PageLanguage'] = "$dir/PageLanguage.body.php";
 
+$wgMessagesDirs['PageLanguage'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['PageLanguage'] =  "$dir/PageLanguage.i18n.php";
 $wgExtensionMessagesFiles['PageLanguageMagic'] =  "$dir/PageLanguage.magic.php";
 
