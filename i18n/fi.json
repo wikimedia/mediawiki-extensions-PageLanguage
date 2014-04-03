@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Nedergard"
+        ]
+    },
+    "pagelanguage-desc": "Määritä sivun kieli sivukohtaisesti.",
+    "pagelanguage-invalid": "'''Varoitus:''' Ohitetaan sivun kielen virheellinen kielitunnus \"$1\".",
+    "pagelanguage-duplicate": "''' Varoitus:''' sivun kieli \"$2\"ohittaa aiemman sivun kielen \"$1\"."
+}
