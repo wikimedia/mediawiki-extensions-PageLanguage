@@ -25,7 +25,7 @@ class PageLanguage {
 	}
 
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setFunctionHook( 'pagelanguage', 'PageLanguage::funcPageLanguage', SFH_NO_HASH );
+		$parser->setFunctionHook( 'pagelanguage', 'PageLanguage::funcPageLanguage', Parser::SFH_NO_HASH );
 
 		return true;
 	}
