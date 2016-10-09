@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Red Winged Duck"
+		]
+	},
+	"pagelanguage-desc": "Вызначае мову для кожнай старонкі",
+	"pagelanguage-invalid": "'''Папярэджаньне:''' няслушны код мовы «$1» для старонкі ігнаруецца."
+}
