@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aefgh39622"
+			"Aefgh39622",
+			"Ans"
 		]
 	},
-	"pagelanguage-desc": "กำหนดภาษาหน้าของแต่ละหน้า"
+	"pagelanguage-desc": "กำหนดภาษาของหน้าแต่ละหน้า"
 }
