@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malafaya"
+			"Malafaya",
+			"Hamilton Abreu"
 		]
 	},
 	"pagelanguage-desc": "Definir idioma da página por página",
-	"pagelanguage-invalid": "'''Aviso:''' Ignorado código de idioma inválido \"$1\" para o idioma da página.",
-	"pagelanguage-duplicate": "'''Aviso:''' Idioma de página \"$2\" sobrepõe-se ao anterior idioma de página \"$1\"."
+	"pagelanguage-invalid": "'''Aviso:''' Foi ignorado o código de língua inválido \"$1\" para a língua da página.",
+	"pagelanguage-duplicate": "'''Aviso:''' A língua da página \"$2\" sobrepõe-se à língua anterior da página \"$1\"."
 }
