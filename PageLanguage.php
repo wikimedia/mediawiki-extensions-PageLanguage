@@ -1,23 +1,15 @@
 <?php
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'Not a valid entry point' );
+ if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'PageLanguage' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['PageLanguage'] = __DIR__ . '/i18n';
+	wfWarn(
+		'Deprecated PHP entry point used for the PageLanguage extension. ' .
+		'Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
+	return;
+} else {
+	die( 'This version of the PageLanguage extension requires MediaWiki 1.29+' );
 }
-
-$wgExtensionCredits['other'][] = array(
-	'path' => __FILE__,
-	'name' => 'Page Language',
-	'author' => array( 'Liangent' ),
-	'url' => 'https://www.mediawiki.org/wiki/Extension:PageLanguage',
-	'descriptionmsg' => 'pagelanguage-desc',
-);
-
-$dir = __DIR__;
-
-$wgAutoloadClasses['PageLanguage'] = "$dir/PageLanguage.body.php";
-
-$wgMessagesDirs['PageLanguage'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['PageLanguageMagic'] =  "$dir/PageLanguage.magic.php";
-
-$wgHooks['PageContentLanguage'][] = 'PageLanguage::onPageContentLanguage';
-$wgHooks['ParserFirstCallInit'][] = 'PageLanguage::onParserFirstCallInit';
