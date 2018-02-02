@@ -6,6 +6,9 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:PageLanguage",
 	"descriptionmsg": "pagelanguage-desc",
 	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.29.0"
+	},
 	"MessagesDirs": {
 		"PageLanguage": [
 			"i18n"
