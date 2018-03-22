@@ -8,7 +8,7 @@ class PageLanguage {
 		if ( isset( self::$cache[$title->getPrefixedDBKey()] ) ) {
 			$pageLang = self::$cache[$title->getPrefixedDBKey()];
 		} elseif ( $title->getArticleID() > 0 ) {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$langCode = $dbr->selectField(
 				'page_props', 'pp_value', array(
 					'pp_page' => $title->getArticleID(),
