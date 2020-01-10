@@ -2,18 +2,23 @@
 
 class PageLanguage {
 
-	private static $cache = array();
+	private static $cache = [];
 
+	/**
+	 * @param Title $title
+	 * @param Language|StubUserLang|string &$pageLang
+	 * @return true
+	 */
 	public static function onPageContentLanguage( Title $title, &$pageLang ) {
 		if ( isset( self::$cache[$title->getPrefixedDBKey()] ) ) {
 			$pageLang = self::$cache[$title->getPrefixedDBKey()];
 		} elseif ( $title->getArticleID() > 0 ) {
 			$dbr = wfGetDB( DB_REPLICA );
 			$langCode = $dbr->selectField(
-				'page_props', 'pp_value', array(
+				'page_props', 'pp_value', [
 					'pp_page' => $title->getArticleID(),
 					'pp_propname' => 'pagelanguage',
-				), __METHOD__
+				], __METHOD__
 			);
 
 			if ( $langCode !== false && Language::isValidCode( $langCode ) ) {
@@ -24,6 +29,12 @@ class PageLanguage {
 		return true;
 	}
 
+	/**
+	 * Register the pagelanguage hook with the Parser.
+	 *
+	 * @param Parser $parser
+	 * @return true
+	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
 		$parser->setFunctionHook( 'pagelanguage', 'PageLanguage::funcPageLanguage', Parser::SFH_NO_HASH );
 
@@ -32,8 +43,8 @@ class PageLanguage {
 
 	public static function funcPageLanguage( Parser $parser, $langCode, $uarg = '' ) {
 		static $magicWords = null;
-		if ( is_null( $magicWords ) ) {
-			$magicWords = new MagicWordArray( array( 'pagelanguage_noerror', 'pagelanguage_noreplace' ) );
+		if ( $magicWords === null ) {
+			$magicWords = new MagicWordArray( [ 'pagelanguage_noerror', 'pagelanguage_noreplace' ] );
 		}
 		$arg = $magicWords->matchStartToEnd( $uarg );
 

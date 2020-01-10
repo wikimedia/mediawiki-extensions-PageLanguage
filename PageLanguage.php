@@ -1,6 +1,6 @@
 <?php
 
- if ( function_exists( 'wfLoadExtension' ) ) {
+if ( function_exists( 'wfLoadExtension' ) ) {
 	wfLoadExtension( 'PageLanguage' );
 	// Keep i18n globals so mergeMessageFileList.php doesn't break
 	$wgMessagesDirs['PageLanguage'] = __DIR__ . '/i18n';

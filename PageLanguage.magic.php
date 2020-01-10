@@ -1,16 +1,16 @@
 <?php
 /**
-* Internationalisation file for PageLanguage extension.
-*
-* @file
-* @ingroup Extensions
-*/
+ * Internationalisation file for PageLanguage extension.
+ *
+ * @file
+ * @ingroup Extensions
+ */
 
-$magicWords = array();
+$magicWords = [];
 
 /** English (English) */
-$magicWords['en'] = array(
-	'pagelanguage' => array( 1, 'PAGELANGUAGE' ),
-	'pagelanguage_noerror' => array( 0, 'noerror' ),
-	'pagelanguage_noreplace' => array( 0, 'noreplace' ),
-);
+$magicWords['en'] = [
+	'pagelanguage' => [ 1, 'PAGELANGUAGE' ],
+	'pagelanguage_noerror' => [ 0, 'noerror' ],
+	'pagelanguage_noreplace' => [ 0, 'noreplace' ],
+];

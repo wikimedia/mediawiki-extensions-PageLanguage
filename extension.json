@@ -18,7 +18,7 @@
 		"PageLanguageMagic": "PageLanguage.magic.php"
 	},
 	"AutoloadClasses": {
-		"PageLanguage": "PageLanguage.body.php"
+		"PageLanguage": "includes/PageLanguage.php"
 	},
 	"Hooks": {
 		"PageContentLanguage": "PageLanguage::onPageContentLanguage",
