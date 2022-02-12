@@ -62,9 +62,20 @@ class PageLanguage {
 				'</span>';
 		}
 
-		$old = $parser->getOutput()->getProperty( 'pagelanguage' );
+		$parserOutput = $parser->getOutput();
+		if ( method_exists( $parserOutput, 'getPageProperty' ) ) {
+			// MW 1.38
+			$old = $parserOutput->getPageProperty( 'pagelanguage' );
+		} else {
+			$old = $parserOutput->getProperty( 'pagelanguage' );
+		}
 		if ( $old === false || $arg !== 'pagelanguage_noreplace' ) {
-			$parser->getOutput()->setProperty( 'pagelanguage', $lang->getCode() );
+			if ( method_exists( $parserOutput, 'setPageProperty' ) ) {
+				// MW 1.38
+				$parserOutput->setPageProperty( 'pagelanguage', $lang->getCode() );
+			} else {
+				$parserOutput->setProperty( 'pagelanguage', $lang->getCode() );
+			}
 			self::$cache[$parser->getTitle()->getPrefixedDBKey()] = $lang;
 		}
 
