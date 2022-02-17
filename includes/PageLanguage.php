@@ -65,12 +65,14 @@ class PageLanguage {
 		$parserOutput = $parser->getOutput();
 		if ( method_exists( $parserOutput, 'getPageProperty' ) ) {
 			// MW 1.38
-			// T301915
-			$old = $parserOutput->getPageProperty( 'pagelanguage' ) ?? false;
+			$old = $parserOutput->getPageProperty( 'pagelanguage' );
 		} else {
 			$old = $parserOutput->getProperty( 'pagelanguage' );
+			if ( $old === false ) {
+				$old = null;
+			}
 		}
-		if ( $old === false || $arg !== 'pagelanguage_noreplace' ) {
+		if ( $old === null || $arg !== 'pagelanguage_noreplace' ) {
 			if ( method_exists( $parserOutput, 'setPageProperty' ) ) {
 				// MW 1.38
 				$parserOutput->setPageProperty( 'pagelanguage', $lang->getCode() );
@@ -80,7 +82,7 @@ class PageLanguage {
 			self::$cache[$parser->getTitle()->getPrefixedDBKey()] = $lang;
 		}
 
-		if ( $old === false || $old === $lang->getCode() || $arg ) {
+		if ( $old === null || $old === $lang->getCode() || $arg ) {
 			return '';
 		} else {
 			return '<span class="error">' .
