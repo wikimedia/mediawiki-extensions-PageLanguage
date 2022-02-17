@@ -65,7 +65,8 @@ class PageLanguage {
 		$parserOutput = $parser->getOutput();
 		if ( method_exists( $parserOutput, 'getPageProperty' ) ) {
 			// MW 1.38
-			$old = $parserOutput->getPageProperty( 'pagelanguage' );
+			// T301915
+			$old = $parserOutput->getPageProperty( 'pagelanguage' ) ?? false;
 		} else {
 			$old = $parserOutput->getProperty( 'pagelanguage' );
 		}
