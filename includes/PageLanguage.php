@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class PageLanguage {
 
 	private static $cache = [];
@@ -21,8 +23,9 @@ class PageLanguage {
 				], __METHOD__
 			);
 
-			if ( $langCode !== false && Language::isValidCode( $langCode ) ) {
-				$pageLang = Language::factory( $langCode );
+			$services = MediaWikiServices::getInstance();
+			if ( $langCode !== false && $services->getLanguageNameUtils()->isValidCode( $langCode ) ) {
+				$pageLang = $services->getLanguageFactory()->getLanguage( $langCode );
 			}
 		}
 
@@ -53,8 +56,9 @@ class PageLanguage {
 			return '';
 		}
 
-		if ( Language::isValidCode( $langCode ) ) {
-			$lang = Language::factory( $langCode );
+		$services = MediaWikiServices::getInstance();
+		if ( $services->getLanguageNameUtils()->isValidCode( $langCode ) ) {
+			$lang = $services->getLanguageFactory()->getLanguage( $langCode );
 		} else {
 			return '<span class="error">' .
 				wfMessage( 'pagelanguage-invalid' )->inContentLanguage()
