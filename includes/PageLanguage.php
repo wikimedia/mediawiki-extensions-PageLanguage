@@ -4,7 +4,6 @@ use MediaWiki\Content\Hook\PageContentLanguageHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
-use MediaWiki\MediaWikiServices;
 
 class PageLanguage implements
 	PageContentLanguageHook,
@@ -62,10 +61,10 @@ class PageLanguage implements
 	 * @return bool|void True or no return value to continue or false to abort
 	 */
 	public function onParserFirstCallInit( $parser ) {
-		$parser->setFunctionHook( 'pagelanguage', 'PageLanguage::funcPageLanguage', Parser::SFH_NO_HASH );
+		$parser->setFunctionHook( 'pagelanguage', [ $this, 'funcPageLanguage' ], Parser::SFH_NO_HASH );
 	}
 
-	public static function funcPageLanguage( Parser $parser, $langCode, $uarg = '' ) {
+	public function funcPageLanguage( Parser $parser, $langCode, $uarg = '' ) {
 		static $magicWords = null;
 		if ( $magicWords === null ) {
 			$magicWords = new MagicWordArray( [ 'pagelanguage_noerror', 'pagelanguage_noreplace' ] );
@@ -77,9 +76,8 @@ class PageLanguage implements
 			return '';
 		}
 
-		$services = MediaWikiServices::getInstance();
-		if ( $services->getLanguageNameUtils()->isValidCode( $langCode ) ) {
-			$lang = $services->getLanguageFactory()->getLanguage( $langCode );
+		if ( $this->languageNameUtils->isValidCode( $langCode ) ) {
+			$lang = $this->languageFactory->getLanguage( $langCode );
 		} else {
 			return '<span class="error">' .
 				wfMessage( 'pagelanguage-invalid' )->inContentLanguage()
