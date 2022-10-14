@@ -21,8 +21,17 @@
 		"PageLanguage": "includes/PageLanguage.php"
 	},
 	"Hooks": {
-		"PageContentLanguage": "PageLanguage::onPageContentLanguage",
-		"ParserFirstCallInit": "PageLanguage::onParserFirstCallInit"
+		"PageContentLanguage": "main",
+		"ParserFirstCallInit": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "PageLanguage",
+			"services": [
+				"LanguageFactory",
+				"LanguageNameUtils"
+			]
+		}
 	},
 	"manifest_version": 2
 }

@@ -1,17 +1,43 @@
 <?php
 
+use MediaWiki\Content\Hook\PageContentLanguageHook;
+use MediaWiki\Hook\ParserFirstCallInitHook;
+use MediaWiki\Languages\LanguageFactory;
+use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
 
-class PageLanguage {
+class PageLanguage implements
+	PageContentLanguageHook,
+	ParserFirstCallInitHook
+{
 
 	private static $cache = [];
+
+	/** @var LanguageFactory */
+	private $languageFactory;
+
+	/** @var LanguageNameUtils */
+	private $languageNameUtils;
+
+	/**
+	 * @param LanguageFactory $languageFactory
+	 * @param LanguageNameUtils $languageNameUtils
+	 */
+	public function __construct(
+		LanguageFactory $languageFactory,
+		LanguageNameUtils $languageNameUtils
+	) {
+		$this->languageFactory = $languageFactory;
+		$this->languageNameUtils = $languageNameUtils;
+	}
 
 	/**
 	 * @param Title $title
 	 * @param Language|StubUserLang|string &$pageLang
-	 * @return true
+	 * @param Language $userLang User language
+	 * @return bool|void True or no return value to continue or false to abort
 	 */
-	public static function onPageContentLanguage( Title $title, &$pageLang ) {
+	public function onPageContentLanguage( $title, &$pageLang, $userLang ) {
 		if ( isset( self::$cache[$title->getPrefixedDBKey()] ) ) {
 			$pageLang = self::$cache[$title->getPrefixedDBKey()];
 		} elseif ( $title->getArticleID() > 0 ) {
@@ -23,25 +49,20 @@ class PageLanguage {
 				], __METHOD__
 			);
 
-			$services = MediaWikiServices::getInstance();
-			if ( $langCode !== false && $services->getLanguageNameUtils()->isValidCode( $langCode ) ) {
-				$pageLang = $services->getLanguageFactory()->getLanguage( $langCode );
+			if ( $langCode !== false && $this->languageNameUtils->isValidCode( $langCode ) ) {
+				$pageLang = $this->languageFactory->getLanguage( $langCode );
 			}
 		}
-
-		return true;
 	}
 
 	/**
 	 * Register the pagelanguage hook with the Parser.
 	 *
 	 * @param Parser $parser
-	 * @return true
+	 * @return bool|void True or no return value to continue or false to abort
 	 */
-	public static function onParserFirstCallInit( Parser $parser ) {
+	public function onParserFirstCallInit( $parser ) {
 		$parser->setFunctionHook( 'pagelanguage', 'PageLanguage::funcPageLanguage', Parser::SFH_NO_HASH );
-
-		return true;
 	}
 
 	public static function funcPageLanguage( Parser $parser, $langCode, $uarg = '' ) {
