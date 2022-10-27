@@ -76,14 +76,13 @@ class PageLanguage implements
 			return '';
 		}
 
-		if ( $this->languageNameUtils->isValidCode( $langCode ) ) {
-			$lang = $this->languageFactory->getLanguage( $langCode );
-		} else {
+		if ( !$this->languageNameUtils->isValidCode( $langCode ) ) {
 			return '<span class="error">' .
 				wfMessage( 'pagelanguage-invalid' )->inContentLanguage()
 					->params( wfEscapeWikiText( $langCode ) )->text() .
 				'</span>';
 		}
+		$lang = $this->languageFactory->getLanguage( $langCode );
 
 		$parserOutput = $parser->getOutput();
 		if ( method_exists( $parserOutput, 'getPageProperty' ) ) {
@@ -107,11 +106,10 @@ class PageLanguage implements
 
 		if ( $old === null || $old === $lang->getCode() || $arg ) {
 			return '';
-		} else {
-			return '<span class="error">' .
-				wfMessage( 'pagelanguage-duplicate' )->inContentLanguage()->params(
-					wfEscapeWikiText( $old ), wfEscapeWikiText( $lang->getCode() ) )->text() .
-				'</span>';
 		}
+		return '<span class="error">' .
+			wfMessage( 'pagelanguage-duplicate' )->inContentLanguage()->params(
+				wfEscapeWikiText( $old ), wfEscapeWikiText( $lang->getCode() ) )->text() .
+			'</span>';
 	}
 }
