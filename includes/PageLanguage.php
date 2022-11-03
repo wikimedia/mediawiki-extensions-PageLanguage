@@ -10,6 +10,7 @@ class PageLanguage implements
 	ParserFirstCallInitHook
 {
 
+	/** @var array<string,Language> */
 	private static $cache = [];
 
 	/** @var LanguageFactory */
@@ -64,6 +65,12 @@ class PageLanguage implements
 		$parser->setFunctionHook( 'pagelanguage', [ $this, 'funcPageLanguage' ], Parser::SFH_NO_HASH );
 	}
 
+	/**
+	 * @param Parser $parser
+	 * @param string $langCode First argument language code
+	 * @param string $uarg Second argument other parameter
+	 * @return string
+	 */
 	public function funcPageLanguage( Parser $parser, $langCode, $uarg = '' ) {
 		static $magicWords = null;
 		if ( $magicWords === null ) {
