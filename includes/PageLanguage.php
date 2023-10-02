@@ -4,6 +4,7 @@ use MediaWiki\Content\Hook\PageContentLanguageHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Parser\MagicWordArray;
 
 class PageLanguage implements
 	PageContentLanguageHook,
