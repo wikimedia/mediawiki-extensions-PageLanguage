@@ -28,6 +28,7 @@
 		"main": {
 			"class": "PageLanguage",
 			"services": [
+				"DBLoadBalancerFactory",
 				"LanguageFactory",
 				"LanguageNameUtils"
 			]

@@ -5,6 +5,7 @@ use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Parser\MagicWordArray;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 class PageLanguage implements
 	PageContentLanguageHook,
@@ -14,6 +15,9 @@ class PageLanguage implements
 	/** @var array<string,Language> */
 	private static $cache = [];
 
+	/** @var IConnectionProvider */
+	private $dbProvider;
+
 	/** @var LanguageFactory */
 	private $languageFactory;
 
@@ -21,13 +25,16 @@ class PageLanguage implements
 	private $languageNameUtils;
 
 	/**
+	 * @param IConnectionProvider $dbProvider
 	 * @param LanguageFactory $languageFactory
 	 * @param LanguageNameUtils $languageNameUtils
 	 */
 	public function __construct(
+		IConnectionProvider $dbProvider,
 		LanguageFactory $languageFactory,
 		LanguageNameUtils $languageNameUtils
 	) {
+		$this->dbProvider = $dbProvider;
 		$this->languageFactory = $languageFactory;
 		$this->languageNameUtils = $languageNameUtils;
 	}
@@ -42,7 +49,7 @@ class PageLanguage implements
 		if ( isset( self::$cache[$title->getPrefixedDBKey()] ) ) {
 			$pageLang = self::$cache[$title->getPrefixedDBKey()];
 		} elseif ( $title->getArticleID() > 0 ) {
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = $this->dbProvider->getReplicaDatabase();
 			$langCode = $dbr->selectField(
 				'page_props', 'pp_value', [
 					'pp_page' => $title->getArticleID(),
