@@ -92,22 +92,9 @@ class PageLanguage implements
 		$lang = $this->languageFactory->getLanguage( $langCode );
 
 		$parserOutput = $parser->getOutput();
-		if ( method_exists( $parserOutput, 'getPageProperty' ) ) {
-			// MW 1.38
-			$old = $parserOutput->getPageProperty( 'pagelanguage' );
-		} else {
-			$old = $parserOutput->getProperty( 'pagelanguage' );
-			if ( $old === false ) {
-				$old = null;
-			}
-		}
+		$old = $parserOutput->getPageProperty( 'pagelanguage' );
 		if ( $old === null || $arg !== 'pagelanguage_noreplace' ) {
-			if ( method_exists( $parserOutput, 'setPageProperty' ) ) {
-				// MW 1.38
-				$parserOutput->setPageProperty( 'pagelanguage', $lang->getCode() );
-			} else {
-				$parserOutput->setProperty( 'pagelanguage', $lang->getCode() );
-			}
+			$parserOutput->setPageProperty( 'pagelanguage', $lang->getCode() );
 			self::$cache[$parser->getTitle()->getPrefixedDBKey()] = $lang;
 		}
 
