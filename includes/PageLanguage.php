@@ -42,7 +42,7 @@ class PageLanguage implements
 	/**
 	 * @param Title $title
 	 * @param Language|StubUserLang|string &$pageLang
-	 * @param Language $userLang User language
+	 * @param mixed $userLang Unused, T299369
 	 * @return bool|void True or no return value to continue or false to abort
 	 */
 	public function onPageContentLanguage( $title, &$pageLang, $userLang ) {
