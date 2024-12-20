@@ -80,7 +80,7 @@ class PageLanguage implements
 		$arg = $magicWords->matchStartToEnd( $uarg );
 
 		$langCode = trim( $langCode );
-		if ( strlen( $langCode ) === 0 ) {
+		if ( $langCode === '' ) {
 			return '';
 		}
 
