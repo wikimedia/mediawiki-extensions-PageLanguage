@@ -13,22 +13,11 @@ class PageLanguage implements
 {
 
 	/** @var array<string,Language> */
-	private static $cache = [];
+	private static array $cache = [];
+	private IConnectionProvider $dbProvider;
+	private LanguageFactory $languageFactory;
+	private LanguageNameUtils $languageNameUtils;
 
-	/** @var IConnectionProvider */
-	private $dbProvider;
-
-	/** @var LanguageFactory */
-	private $languageFactory;
-
-	/** @var LanguageNameUtils */
-	private $languageNameUtils;
-
-	/**
-	 * @param IConnectionProvider $dbProvider
-	 * @param LanguageFactory $languageFactory
-	 * @param LanguageNameUtils $languageNameUtils
-	 */
 	public function __construct(
 		IConnectionProvider $dbProvider,
 		LanguageFactory $languageFactory,
