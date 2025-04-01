@@ -2,9 +2,13 @@
 
 use MediaWiki\Content\Hook\PageContentLanguageHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
+use MediaWiki\Language\Language;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Parser\MagicWordArray;
+use MediaWiki\Parser\Parser;
+use MediaWiki\StubObject\StubUserLang;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 class PageLanguage implements

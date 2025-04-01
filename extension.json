@@ -7,7 +7,7 @@
 	"descriptionmsg": "pagelanguage-desc",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.40"
+		"MediaWiki": ">= 1.43"
 	},
 	"MessagesDirs": {
 		"PageLanguage": [
